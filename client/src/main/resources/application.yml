@@ -3,13 +3,13 @@ spring:
     name: HelloClient
 
 server:
-  port: 7211
+  port: 7788
 
 eureka:
-  password: password
+#  password: password
   client:
     serviceUrl:
-      defaultZone: http://user:${eureka.password}@localhost:8761/eureka/
+      defaultZone: http://localhost:8761/eureka/
   instance:
     leaseRenewalIntervalInSeconds: 10
     metadataMap:
