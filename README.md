@@ -11,7 +11,7 @@ Assumes eureka (from [spring-cloud-samples](https://github.com/spring-cloud-samp
 
 run `java -jar server/target/feign-eureka-hello-server-0.0.1-SNAPSHOT.jar`
 
-verify it is functioning at [http://localhost:7111](http://localhost:7111)
+verify it is functioning at [http://localhost:7789](http://localhost:7111)
 
 You should see `Hello World: HelloServer:myhostname:7111`
 
@@ -19,7 +19,7 @@ You should see `Hello World: HelloServer:myhostname:7111`
 
 run `java -jar client/target/feign-eureka-hello-client-0.0.1-SNAPSHOT.jar`
 
-verify it is functioning at [http://localhost:7211](http://localhost:7211)
+verify it is functioning at [http://localhost:7788](http://localhost:7211)
 
 You should see `Hello World: HelloServer:myhostname:7111`
 
@@ -35,4 +35,4 @@ It should go away shortly.
 
 run `java -jar server/target/feign-eureka-hello-server-0.0.1-SNAPSHOT.jar --server.port=7112`
 
-Go back to [http://localhost:7211](http://localhost:7211) and you should see both ports `7111` and `7112` in the output after a minute or two as you keep refreshing.
+Go back to [http://localhost:7790](http://localhost:7790) and you should see both ports `7789` and `7790` in the output after a minute or two as you keep refreshing.
