@@ -9,6 +9,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.ServiceInstance;
 import org.springframework.cloud.client.discovery.DiscoveryClient;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -29,6 +31,13 @@ public class HelloServerApplication {
 				.get(new Random().nextInt(instances.size()));
 		return "Hello World: " + selectedInstance.getServiceId() + ":" + selectedInstance
 				.getHost() + ":" + selectedInstance.getPort();
+	}
+
+	@PostMapping("/test/responseentity")
+	public ResponseEntity<String> test4ResponseEntity() {
+		List<String> services = client.getServices();
+		services.forEach(System.out::println);
+		return ResponseEntity.ok("this is ok");
 	}
 
 	public static void main(String[] args) {
